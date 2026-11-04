@@ -1,0 +1,9 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+.snapshots/
+auto_backend_results/
+integration_output/
+.vscode/

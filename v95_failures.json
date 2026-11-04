@@ -1,0 +1,1122 @@
+{
+  "rounds": 100,
+  "passed": 28,
+  "failed": 72,
+  "seed": 2026,
+  "failures": [
+    {
+      "case": 1,
+      "original": [
+        "n = 8",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 2,
+      "original": [
+        "a = 8",
+        "b = 7",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 3,
+      "original": [
+        "n = 0",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 4,
+      "original": [
+        "n = 4",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 6,
+      "original": [
+        "n = 6",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 7,
+      "original": [
+        "a = 1",
+        "b = 1",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 8,
+      "original": [
+        "n = 1",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 9,
+      "original": [
+        "n = 8",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 10,
+      "original": [
+        "n = 7",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 13,
+      "original": [
+        "a = -8",
+        "b = 2",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 14,
+      "original": [
+        "a = -7",
+        "b = 3",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 15,
+      "original": [
+        "n = 8",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 16,
+      "original": [
+        "a = 3",
+        "b = 8",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 17,
+      "original": [
+        "n = 3",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 19,
+      "original": [
+        "n = 7",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 21,
+      "original": [
+        "n = 8",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 22,
+      "original": [
+        "a = 7",
+        "b = 2",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 23,
+      "original": [
+        "n = 7",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 24,
+      "original": [
+        "a = 3",
+        "b = -4",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 25,
+      "original": [
+        "a = -10",
+        "b = -9",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 26,
+      "original": [
+        "n = 8",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 27,
+      "original": [
+        "a = 1",
+        "b = -4",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 28,
+      "original": [
+        "n = 8",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 29,
+      "original": [
+        "a = 3",
+        "b = 7",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 30,
+      "original": [
+        "a = 0",
+        "b = 4",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 31,
+      "original": [
+        "a = 6",
+        "b = -2",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 33,
+      "original": [
+        "n = 5",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 35,
+      "original": [
+        "a = -10",
+        "b = -8",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 36,
+      "original": [
+        "a = 8",
+        "b = 7",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 37,
+      "original": [
+        "n = 1",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 38,
+      "original": [
+        "n = 4",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 39,
+      "original": [
+        "n = 2",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 41,
+      "original": [
+        "n = 3",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 42,
+      "original": [
+        "a = 8",
+        "b = -6",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 43,
+      "original": [
+        "a = -8",
+        "b = 3",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 45,
+      "original": [
+        "a = 2",
+        "b = -6",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 47,
+      "original": [
+        "a = -8",
+        "b = -9",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 48,
+      "original": [
+        "n = 0",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 49,
+      "original": [
+        "n = 4",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 50,
+      "original": [
+        "a = 0",
+        "b = -7",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 51,
+      "original": [
+        "a = 8",
+        "b = 9",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 53,
+      "original": [
+        "a = 9",
+        "b = 0",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 54,
+      "original": [
+        "n = 8",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 55,
+      "original": [
+        "a = -9",
+        "b = -4",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 57,
+      "original": [
+        "a = 10",
+        "b = -4",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 58,
+      "original": [
+        "n = 8",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 60,
+      "original": [
+        "n = 4",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 61,
+      "original": [
+        "a = 7",
+        "b = 3",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 62,
+      "original": [
+        "a = -1",
+        "b = -5",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 64,
+      "original": [
+        "a = -1",
+        "b = 4",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 65,
+      "original": [
+        "a = 6",
+        "b = 5",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 69,
+      "original": [
+        "a = 7",
+        "b = -5",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 70,
+      "original": [
+        "a = -5",
+        "b = 1",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 71,
+      "original": [
+        "n = 3",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 73,
+      "original": [
+        "n = 4",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 74,
+      "original": [
+        "n = 2",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 77,
+      "original": [
+        "n = 1",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 78,
+      "original": [
+        "n = 1",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 79,
+      "original": [
+        "a = 0",
+        "b = -5",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 80,
+      "original": [
+        "a = -8",
+        "b = -10",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 81,
+      "original": [
+        "a = 3",
+        "b = -10",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 84,
+      "original": [
+        "a = 4",
+        "b = 9",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 85,
+      "original": [
+        "a = 0",
+        "b = 9",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 86,
+      "original": [
+        "n = 1",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 87,
+      "original": [
+        "n = 4",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 88,
+      "original": [
+        "a = -1",
+        "b = 1",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 89,
+      "original": [
+        "n = 4",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 90,
+      "original": [
+        "n = 1",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 91,
+      "original": [
+        "a = 3",
+        "b = 0",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 92,
+      "original": [
+        "n = 8",
+        "i = 0",
+        "sum = 0",
+        "TOP:",
+        "if i >= n goto DONE",
+        "sum = sum + i",
+        "i = i + 1",
+        "goto TOP",
+        "DONE:",
+        "print sum"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'TOP:'"
+    },
+    {
+      "case": 95,
+      "original": [
+        "a = 9",
+        "b = 10",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    },
+    {
+      "case": 97,
+      "original": [
+        "a = 3",
+        "b = 2",
+        "if a > b goto THEN",
+        "c = b - a",
+        "goto END",
+        "THEN:",
+        "c = a - b",
+        "END:",
+        "print c"
+      ],
+      "reason": "ValueError: Unsupported TAC instruction: 'THEN:'"
+    }
+  ]
+}
