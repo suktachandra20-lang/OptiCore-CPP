@@ -1,0 +1,221 @@
+{
+  "Constant Optimization": {
+    "original": [
+      "t1 = 10 * 5",
+      "t2 = 20 + 10",
+      "x = t1 + 0",
+      "print x"
+    ],
+    "optimized": [
+      "print 50"
+    ],
+    "report": {
+      "original_instructions": 4,
+      "optimized_instructions": 1,
+      "removed_instructions": 3,
+      "reduction_percent": 75.0
+    },
+    "cfg": [
+      {
+        "id": "B1",
+        "instructions": [
+          "print 50"
+        ],
+        "successors": [],
+        "predecessors": [],
+        "live_in": [],
+        "live_out": []
+      }
+    ]
+  },
+  "Branch Optimization": {
+    "original": [
+      "if flag > 0 goto POS",
+      "x = 10",
+      "goto END",
+      "label POS",
+      "x = 20",
+      "label END",
+      "print x"
+    ],
+    "optimized": [
+      "if flag > 0 goto POS",
+      "x = 10",
+      "goto END",
+      "label POS",
+      "x = 20",
+      "label END",
+      "print x"
+    ],
+    "report": {
+      "original_instructions": 7,
+      "optimized_instructions": 7,
+      "removed_instructions": 0,
+      "reduction_percent": 0.0
+    },
+    "cfg": [
+      {
+        "id": "B1",
+        "instructions": [
+          "if flag > 0 goto POS"
+        ],
+        "successors": [
+          "B3",
+          "B2"
+        ],
+        "predecessors": [],
+        "live_in": [
+          "flag"
+        ],
+        "live_out": []
+      },
+      {
+        "id": "B2",
+        "instructions": [
+          "x = 10",
+          "goto END"
+        ],
+        "successors": [
+          "B4"
+        ],
+        "predecessors": [
+          "B1"
+        ],
+        "live_in": [],
+        "live_out": [
+          "x"
+        ]
+      },
+      {
+        "id": "B3",
+        "instructions": [
+          "label POS",
+          "x = 20"
+        ],
+        "successors": [
+          "B4"
+        ],
+        "predecessors": [
+          "B1"
+        ],
+        "live_in": [],
+        "live_out": [
+          "x"
+        ]
+      },
+      {
+        "id": "B4",
+        "instructions": [
+          "label END",
+          "print x"
+        ],
+        "successors": [],
+        "predecessors": [
+          "B2",
+          "B3"
+        ],
+        "live_in": [
+          "x"
+        ],
+        "live_out": []
+      }
+    ]
+  },
+  "Loop Optimization": {
+    "original": [
+      "i = 0",
+      "label LOOP",
+      "if i >= 3 goto END",
+      "i = i + 1",
+      "goto LOOP",
+      "label END",
+      "print i"
+    ],
+    "optimized": [
+      "i = 0",
+      "label LOOP",
+      "if i >= 3 goto END",
+      "i = i + 1",
+      "goto LOOP",
+      "label END",
+      "print i"
+    ],
+    "report": {
+      "original_instructions": 7,
+      "optimized_instructions": 7,
+      "removed_instructions": 0,
+      "reduction_percent": 0.0
+    },
+    "cfg": [
+      {
+        "id": "B1",
+        "instructions": [
+          "i = 0"
+        ],
+        "successors": [
+          "B2"
+        ],
+        "predecessors": [],
+        "live_in": [],
+        "live_out": [
+          "i"
+        ]
+      },
+      {
+        "id": "B2",
+        "instructions": [
+          "label LOOP",
+          "if i >= 3 goto END"
+        ],
+        "successors": [
+          "B4",
+          "B3"
+        ],
+        "predecessors": [
+          "B1",
+          "B3"
+        ],
+        "live_in": [
+          "i"
+        ],
+        "live_out": [
+          "i"
+        ]
+      },
+      {
+        "id": "B3",
+        "instructions": [
+          "i = i + 1",
+          "goto LOOP"
+        ],
+        "successors": [
+          "B2"
+        ],
+        "predecessors": [
+          "B2"
+        ],
+        "live_in": [
+          "i"
+        ],
+        "live_out": [
+          "i"
+        ]
+      },
+      {
+        "id": "B4",
+        "instructions": [
+          "label END",
+          "print i"
+        ],
+        "successors": [],
+        "predecessors": [
+          "B2"
+        ],
+        "live_in": [
+          "i"
+        ],
+        "live_out": []
+      }
+    ]
+  }
+}

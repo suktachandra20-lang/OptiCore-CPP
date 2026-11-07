@@ -1,0 +1,43 @@
+{
+  "original_line_count": 5,
+  "minimized_line_count": 4,
+  "evaluations": 12,
+  "failure_before": {
+    "kind": "behavior_mismatch",
+    "error_type": "",
+    "detail": "Observable behavior differs",
+    "original_output": [
+      5
+    ],
+    "original_returned": null,
+    "original_halted": false,
+    "optimized_output": [
+      999
+    ],
+    "optimized_tac": [
+      "print 999"
+    ]
+  },
+  "failure_after": {
+    "kind": "behavior_mismatch",
+    "error_type": "",
+    "detail": "Observable behavior differs",
+    "original_output": [
+      5
+    ],
+    "original_returned": null,
+    "original_halted": false,
+    "optimized_output": [
+      999
+    ],
+    "optimized_tac": [
+      "print 999"
+    ]
+  },
+  "minimized_tac": [
+    "a = 2",
+    "b = 3",
+    "c = a + b",
+    "print c"
+  ]
+}
