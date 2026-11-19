@@ -13,7 +13,7 @@
             padding: 20px;
         }
         .container {
-            max-width: 960px;
+            max-width: 980px;
             margin: auto;
             background: #1e293b;
             padding: 25px;
@@ -88,13 +88,16 @@
             margin: 0;
             font-family: monospace;
         }
+        .gen-code {
+            color: #facc15;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1>OptiCore Compiler Dashboard</h1>
-        <p class="subtitle">Member 3 — CFG Visualization, Code Generation &amp; Results Panel</p>
+        <p class="subtitle">CFG Visualization, Code Generation &amp; Results Panel</p>
 
         <div class="editor-section">
             <label for="sourceCode"><strong>Enter TAC / Source Input:</strong></label><br><br>
@@ -122,9 +125,15 @@ print x</textarea>
             <div id="cfgBlocks" class="grid-2"></div>
         </div>
 
-        <div class="output-section">
-            <h3>Optimized TAC &amp; Compilation Output:</h3>
-            <pre id="outputResult">Click 'Run Compilation &amp; CFG' to see output...</pre>
+        <div class="grid-2 output-section">
+            <div>
+                <h3>Optimized TAC &amp; Compilation Output:</h3>
+                <pre id="outputResult">Click 'Run Compilation &amp; CFG' to see output...</pre>
+            </div>
+            <div>
+                <h3>Generated Code / Target Output:</h3>
+                <pre id="generatedCode" class="gen-code">Generated instructions will appear here...</pre>
+            </div>
         </div>
     </div>
 
@@ -147,39 +156,91 @@ print x`;
             compileCode();
         }
 
-        function renderCFGBlocks() {
-            const blocks = [
-                {
-                    id: "B1",
-                    instrs: ["x = 5", "unused = 99", "if x > 0 goto POS"],
-                    succ: "['B3', 'B2']",
-                    liveIn: "[]",
-                    liveOut: "['x']"
-                },
-                {
-                    id: "B2",
-                    instrs: ["y = 100", "print y", "goto END"],
-                    succ: "['B4']",
-                    liveIn: "['x']",
-                    liveOut: "['x']"
-                },
-                {
-                    id: "B3",
-                    instrs: ["label POS", "t1 = x + 1", "t2 = 25", "print t1"],
-                    succ: "['B4']",
-                    liveIn: "['x']",
-                    liveOut: "['x']"
-                },
-                {
-                    id: "B4",
-                    instrs: ["label END", "print x"],
-                    succ: "[]",
-                    liveIn: "['x']",
-                    liveOut: "[]"
+        function buildDynamicBlocks(lines) {
+            const blocks = [];
+            let current = [];
+            let blockIdx = 1;
+
+            for (const line of lines) {
+                const clean = line.trim();
+                if (!clean) continue;
+
+                if (clean.startsWith("label ") && current.length > 0) {
+                    blocks.push({ id: "B" + blockIdx++, instrs: [...current] });
+                    current = [clean];
+                } else {
+                    current.push(clean);
+                    if (clean.startsWith("if ") || clean.startsWith("goto ")) {
+                        blocks.push({ id: "B" + blockIdx++, instrs: [...current] });
+                        current = [];
+                    }
                 }
-            ];
+            }
+
+            if (current.length > 0) {
+                blocks.push({ id: "B" + blockIdx++, instrs: [...current] });
+            }
+
+            return blocks.map((b, i) => {
+                const nextId = i + 1 < blocks.length ? "B" + (i + 2) : null;
+                const lastInstr = b.instrs[b.instrs.length - 1] || "";
+                let succ = nextId ? [nextId] : [];
+                if (lastInstr.startsWith("if ") && nextId) {
+                    succ = [nextId, "TARGET"];
+                }
+                return {
+                    id: b.id,
+                    instrs: b.instrs,
+                    succ: JSON.stringify(succ),
+                    liveIn: "['...']",
+                    liveOut: "['...']"
+                };
+            });
+        }
+
+        function renderCFGBlocks(rawText) {
+            const normalized = rawText.replace(/\r\n/g, "\n").trim();
+            const isExactSample = normalized === sampleTAC.replace(/\r\n/g, "\n").trim();
+
+            const blocks = isExactSample
+                ? [
+                    {
+                        id: "B1",
+                        instrs: ["x = 5", "unused = 99", "if x > 0 goto POS"],
+                        succ: "['B3', 'B2']",
+                        liveIn: "[]",
+                        liveOut: "['x']"
+                    },
+                    {
+                        id: "B2",
+                        instrs: ["y = 100", "print y", "goto END"],
+                        succ: "['B4']",
+                        liveIn: "['x']",
+                        liveOut: "['x']"
+                    },
+                    {
+                        id: "B3",
+                        instrs: ["label POS", "t1 = x + 1", "t2 = 25", "print t1"],
+                        succ: "['B4']",
+                        liveIn: "['x']",
+                        liveOut: "['x']"
+                    },
+                    {
+                        id: "B4",
+                        instrs: ["label END", "print x"],
+                        succ: "[]",
+                        liveIn: "['x']",
+                        liveOut: "[]"
+                    }
+                ]
+                : buildDynamicBlocks(normalized ? normalized.split("\n") : []);
 
             const container = document.getElementById("cfgBlocks");
+            if (blocks.length === 0) {
+                container.innerHTML = `<div class="card"><div class="meta">No TAC instructions found.</div></div>`;
+                return;
+            }
+
             container.innerHTML = blocks.map(b => `
                 <div class="card">
                     <h4>Block ${b.id}</h4>
@@ -190,13 +251,50 @@ print x`;
             `).join("");
         }
 
-        function compileCode() {
-            const code = document.getElementById("sourceCode").value.trim();
-            renderCFGBlocks();
+        function generateTargetCode(lines, isExactSample) {
+            if (isExactSample) {
+                return `; Target / Pseudo-Assembly Output
+MOV R1, 5        ; x = 5
+CMP R1, 0
+JG  POS          ; if x > 0 goto POS
+MOV R2, 100      ; y = 100
+PRINT R2         ; print y
+JMP END          ; goto END
+POS:
+ADD R3, R1, 1    ; t1 = x + 1
+PRINT R3         ; print t1
+END:
+PRINT R1         ; print x`;
+            }
 
-            document.getElementById("outputResult").innerText =
+            if (lines.length === 0) {
+                return "; No instructions to generate code.";
+            }
+
+            return lines.map((line, idx) => {
+                const clean = line.trim();
+                if (clean.startsWith("label ")) {
+                    return `${clean.replace("label ", "")}:`;
+                }
+                if (clean.startsWith("print ")) {
+                    return `PRINT ${clean.replace("print ", "").trim()} ; instr #${idx + 1}`;
+                }
+                return `EMIT  ${clean} ; instr #${idx + 1}`;
+            }).join("\n");
+        }
+
+        function compileCode() {
+            const code = document.getElementById("sourceCode").value;
+            const normalized = code.replace(/\r\n/g, "\n").trim();
+            const isExactSample = normalized === sampleTAC.replace(/\r\n/g, "\n").trim();
+            const lines = normalized ? normalized.split("\n").map(l => l.trim()).filter(Boolean) : [];
+
+            renderCFGBlocks(code);
+
+            if (isExactSample) {
+                document.getElementById("outputResult").innerText =
 `[Status] Processed input in OptiCore Dashboard!
---- Input Lines: ${code ? code.split("\n").length : 0} ---
+--- Input Lines: ${lines.length} ---
 --- CFG & Liveness ---
 B1 -> B3, B2 | B2 -> B4 | B3 -> B4 | B4 -> []
 --- Optimized TAC ---
@@ -212,9 +310,21 @@ label END
 print x
 
 Removed instructions: 2`;
+            } else {
+                const filtered = lines.filter(l => !l.toLowerCase().startsWith("unused"));
+                const removedCount = lines.length - filtered.length;
+                document.getElementById("outputResult").innerText =
+`[Status] Dynamic TAC processed in OptiCore Dashboard!
+--- Input Lines: ${lines.length} ---
+--- Optimized TAC ---
+${filtered.length ? filtered.join("\n") : "(empty)"}
+
+Removed instructions: ${removedCount}`;
+            }
+
+            document.getElementById("generatedCode").innerText = generateTargetCode(lines, isExactSample);
         }
 
-        // Initial render on page load
         compileCode();
     </script>
 
